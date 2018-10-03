@@ -6,5 +6,6 @@
 
 <p> Hello Team, This is Jenkins Tutorial series. I am your instructor Sandeep Ghodke</p>
 
+<p> the deployment is successful via Jenkins job</p>
 </body>
 </html>
