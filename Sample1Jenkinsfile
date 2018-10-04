@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('Build Servlet Project') {
             steps {
-			   bat 'mvn clean package'
+		bat  'mvn clean package'
             }
 			
             post {
@@ -11,7 +11,7 @@ pipeline {
 	             echo 'Now Archiving'
 	             archiveArtifacts artifacts : '**/*.war'
 	            }
-            }
-		}
-	}
+                }
+	 }
+     }
 }
