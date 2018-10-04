@@ -7,10 +7,10 @@ pipeline {
             }
 			
             post {
-	          success {
+	            success {
 	             echo 'Now Archiving'
 	             archiveArtifacts artifacts : '**/*.war'
-	          }
+	            }
             }
 		}
 	}
