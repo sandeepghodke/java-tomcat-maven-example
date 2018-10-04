@@ -4,9 +4,6 @@ pipeline {
         stage ('Build Servlet Project') {
             steps {
                 /*For windows machine */
-			   set M2_HOME "C:\Users\sandeepgh\apache-maven-3.5.4"
-			   set M2=%M2_HOME%\bin
-			   set path=%path%;%M2%	
                bat  'mvn clean package'
  
                 /*For Mac & Linux machine */
