@@ -13,6 +13,7 @@
 
 <h4>We are working on Code Pipeline version 6</h4>
 
+<h4>We are working on Code Pipeline version 7</h4>
 
 </body>
 </html>
