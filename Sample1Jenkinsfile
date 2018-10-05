@@ -10,7 +10,7 @@ pipeline {
 		    
             steps {
                 /*For windows machine */
-               bat '%M2_HOME%\\bin\mvn clean package'
+               bat '%M2_HOME%\\bin\\mvn clean package'
  
                 /*For Mac & Linux machine */
                // sh  'mvn clean package'
