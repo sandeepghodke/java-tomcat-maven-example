@@ -23,9 +23,3 @@ pipeline {
         }
     }
 }
-
-stage('Build'){
-            withEnv(["GOPATH=/ws","PATH=/ws/bin:${env.PATH}"]) {
-                sh 'bash build.sh'
-            }
-        }
