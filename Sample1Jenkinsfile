@@ -5,8 +5,6 @@ pipeline {
     }
     stages {
         stage ('Build Servlet Project') {
-    stages {
-        stage ('Build Servlet Project') {
 		    
             steps {
                 /*For windows machine */
