@@ -1,13 +1,13 @@
 pipeline {
     agent any
+	environment {
+        M2_HOME='C:\\Users\\sandeepgh\\apache-maven-3.5.4'
+    }
     stages {
         stage ('Build Servlet Project') {
-		    withEnv(["M2_HOME=D:\\Program Files\\Maven\\apache-maven-3.3.3","PATH=%M2_HOME%\\bin;${env.PATH}"]) {
-                bat 'mvn clean package'
-            }
             steps {
                 /*For windows machine */
-               bat 'mvn clean package'
+               bat '%MY_PYTHON%\\bin\mvn clean package'
  
                 /*For Mac & Linux machine */
                // sh  'mvn clean package'
@@ -23,9 +23,3 @@ pipeline {
         }
     }
 }
-
-stage('Build'){
-            withEnv(["GOPATH=/ws","PATH=/ws/bin:${env.PATH}"]) {
-                sh 'bash build.sh'
-            }
-        }
