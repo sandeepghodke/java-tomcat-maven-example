@@ -1,8 +1,13 @@
 pipeline {
     agent any
-	environment {
-        M2_HOME='C:\\Users\\sandeepgh\\apache-maven-3.5.4'
+	
+	tools {
+        maven 'localMaven'
     }
+	
+	//environment {
+    //    M2_HOME='C:\\Users\\sandeepgh\\apache-maven-3.5.4'
+    //}
 	
     stages {
         stage ('Build Servlet Project') {
