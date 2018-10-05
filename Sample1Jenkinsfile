@@ -5,13 +5,13 @@ pipeline {
 		    withEnv(["M2_HOME=D:\\Program Files\\Maven\\apache-maven-3.3.3","PATH=%M2_HOME%\\bin;${env.PATH}"]) {
                 bat 'mvn clean package'
             }
-            //steps {
+            steps {
                 /*For windows machine */
-               //bat 'mvn clean package'
+               bat 'mvn clean package'
  
                 /*For Mac & Linux machine */
                // sh  'mvn clean package'
-            //}
+            }
  
             post{
                 success{
