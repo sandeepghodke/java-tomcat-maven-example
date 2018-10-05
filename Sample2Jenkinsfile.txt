@@ -3,9 +3,9 @@ pipeline {
 	environment {
         M2_HOME='C:\\Users\\sandeepgh\\apache-maven-3.5.4'
     }
+	
     stages {
         stage ('Build Servlet Project') {
-		    
             steps {
                 /*For windows machine */
                bat '%M2_HOME%\\bin\\mvn clean package'
@@ -22,31 +22,33 @@ pipeline {
                 }
             }
         }
-		
-		stage ('Deploy Build in Staging Area') {
-		   steps{
-		      build job : 'Deploy-StagingArea-Pipeline'
-		   }		
-		}
-         
-		stage ('Deploy to Production') {
-		   steps {
-		      timeout (time: 5, unit: 'DAYS') {
-			     input message: 'Approve Production Deployment?'
-			  }
-			  
-			  build job : 'Deploy-Production-Pipeline' 
-		   }
-		
-		   post {
-		      success{
-                 echo 'Deployment on Production is successful'
-              }
-
-              failure {
-                 echo 'Deployment failure on Production'  
-              } 			  
-		   }
-		}
+ 
+        stage ('Deploy Build in Staging Area'){
+            steps{
+ 
+                build job : 'Deploy-StagingArea-Piple'
+ 
+            }
+        }
+ 
+        stage ('Deploy to Production'){
+            steps{
+                timeout (time: 5, unit:'DAYS'){
+                    input message: 'Approve PRODUCTION Deployment?'
+                }
+                
+                build job : 'Deploy-Production-Pipeline'
+            }
+ 
+            post{
+                success{
+                    echo 'Deployment on PRODUCTION is Successful'
+                }
+ 
+                failure{
+                    echo 'Deployement Failure on PRODUCTION'
+                }
+            }
+        }
     }
 }
